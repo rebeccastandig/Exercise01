@@ -15,11 +15,11 @@ def guessing_game():
             guess = int(raw_input(prompt))
             if guess < number:
                 print "Your guess is too low."
-                guess = int(raw_input(prompt))
+                #guess = int(raw_input(prompt))
                 
             if guess > number:
                 print "Your guess is too high."
-                guess = int(raw_input(prompt))
+                #guess = int(raw_input(prompt))
         
             if guess == number:
                 print "Congratulations, you're right %s!" % name
