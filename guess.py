@@ -6,19 +6,25 @@ def guessing_game():
     print "Hi %s. I'm thinking of a number between 1 and 100. Try to guess the number." % name
 
     prompt = 'Your guess? '
-    guess = int(raw_input(prompt))
+    guess = 0
 
     number = random.randint(1, 100)
 
     while guess != number:
-        if guess < number:
-            print "Your guess is too low."
+        try:
             guess = int(raw_input(prompt))
-        if guess > number:
-            print "Your guess is too high."
-            guess = int(raw_input(prompt))
-    
-        if guess == number:
-            print "Congratulations, you're right %s!" % name
+            if guess < number:
+                print "Your guess is too low."
+                guess = int(raw_input(prompt))
+                
+            if guess > number:
+                print "Your guess is too high."
+                guess = int(raw_input(prompt))
+        
+            if guess == number:
+                print "Congratulations, you're right %s!" % name
 
+        except ValueError:
+            print "Try again, with a whole number!"
+            
 guessing_game()
